@@ -23,7 +23,7 @@ export default function page() {
           <h1 className="text-secondary max-w-64 text-left font-bold text-2xl w-full md:text-3xl md:max-w-none lg:text-4xl">
             Conecte-se com Empresas e Parceiros da Comunidade UFC
           </h1>
-          <p className='md:max-w-96 text-secondary'>
+          <p className="md:max-w-96 text-secondary">
             Promovemos a conexão entre você, iniciativas da UFC e empresas
             parceiras externas!
           </p>
@@ -54,7 +54,7 @@ export default function page() {
         </section>
       </div>
 
-      <section className="w-full flex justify-center items-center flex-col my-9 px-3">
+      <section className="w-full flex items-center flex-col my-9 px-3">
         <Badge>
           <p className="text-xs text-secondary border-2 px-3 py-1 rounded-full">
             O escritório
@@ -66,11 +66,11 @@ export default function page() {
         <h2 className="text-xl text-center text-secondary font-semibold mt-2">
           O que é o Escritório de Projetos e Parcerias?
         </h2>
-        <div className="flex flex-row gap-2 mt-5">
+        <div className="flex flex-row mt-5 w-full justify-center md:gap-40 gap-7">
           <div className="flex flex-row items-center gap-4 self-start">
             <Image
               src="/logo.svg"
-              alt="Imagem de pessoas conversando"
+              alt="Logo escritório de projetos"
               width={60}
               height={60}
               className="py-2"
@@ -108,29 +108,30 @@ export default function page() {
           </p>
           <p className="text-xs ">Acesse por categorias!</p>
         </Badge>
-        <div className='flex items-center flex-col'>
+        <div className="flex items-center flex-col">
           <h2 className="text-4xl text-center italic font-semibold max-w-52 my-5">
             Fluxo de Uniformização
           </h2>
           <p className="text-xs text-center italic md:max-w-96">
-            Descubra as etapas envolvidas por trás do processo de uniformização de
-            setores implantando na Universidade Federal do Ceará
+            Descubra as etapas envolvidas por trás do processo de uniformização
+            de setores implantando na Universidade Federal do Ceará
           </p>
-          <div className='flex flex-col md:flex-row mt-6'>
-            <div className="mt-3 flex flex-col gap-3 px-6 md:w-2/4">
+          <div className="flex flex-col md:flex-row mt-6">
+            <div className="mt-3 flex flex-col gap-3 px-6 md:w-[50vw]">
               <p className="text-sm">
-                A Universidade reconhece a importância de uma comunicação clara e
-                eficiente entre seus setores. Para isso, estamos empenhados em
-                uniformizar os fluxos e processos relacionados à definição de temas,
-                começando pelo processo de extensão.
+                A Universidade reconhece a importância de uma comunicação clara
+                e eficiente entre seus setores. Para isso, estamos empenhados em
+                uniformizar os fluxos e processos relacionados à definição de
+                temas, começando pelo processo de extensão.
               </p>
               <p className="text-sm">
                 Este guia detalhado descreve os passos que serão seguidos para
                 alcançar a uniformização desejada.
               </p>
               <p className="text-sm">
-                Acreditamos que a uniformização dos fluxos e processos de definição
-                de temas trará diversos benefícios para a Universidade, como:
+                Acreditamos que a uniformização dos fluxos e processos de
+                definição de temas trará diversos benefícios para a
+                Universidade, como:
               </p>
               <ul className="list-disc ml-6">
                 <li>
@@ -179,7 +180,7 @@ export default function page() {
             height={60}
             className="py-2"
           />
-          <p className='text-xs'>Nos Siga nas redes sociais</p>
+          <p className="text-xs">Nos Siga nas redes sociais</p>
           <div className="flex gap-5">
             <FacebookIcon size={40} />
             <Twitter size={40} />

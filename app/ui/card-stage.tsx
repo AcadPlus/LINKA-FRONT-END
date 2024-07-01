@@ -5,7 +5,7 @@ export default function CardStage() {
     <div className="flex gap-3 justify-center">
       <div className="flex flex-col items-center gap-2 mt-1">
         <div className="w-4 h-4 rounded-full block bg-[#4576ff]"></div>
-        <div className="w-[2px] rounded-lg h-10 block bg-[#4576ff]"></div>
+        <div className="w-[2px] rounded-lg h-6 block bg-[#4576ff]"></div>
       </div>
       <div>
         <h4 className="text-sm font-semibold">
