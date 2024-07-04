@@ -18,33 +18,29 @@ export default function page() {
           height={40}
           className="w-full md:w-2/4 md:order-1"
         />
-        <section className="bg-primary w-full py-3 px-5 flex flex-col gap-3 md:w-2/4 md:justify-center">
+        <section className="bg-primary w-full py-5 px-5 flex flex-col gap-3 md:w-2/4 md:justify-center">
           <p className="text-secondary md:text-xl">Bem vindo!</p>
           <h1 className="text-secondary max-w-64 text-left font-bold text-2xl w-full md:text-3xl md:max-w-none lg:text-4xl">
             Conecte-se com Empresas e Parceiros da Comunidade UFC
           </h1>
-          <p className="md:max-w-96 text-secondary">
+          <p className="md:max-w-96 text-secondary text-xs">
             Promovemos a conexão entre você, iniciativas da UFC e empresas
             parceiras externas!
           </p>
-          <div className="flex flex-row items-center justify-between gap-3">
-            <form className="flex flex-row gap-3 items-center">
-              <p className="text-xs md:min-w-16">Busco por..</p>
+          <div className="flex flex-row items-center text-secondary">
+            <form className="flex flex-row gap-2 items-center">
+              <p className="text-xs w-16 ">Busco por..</p>
               <select
-                disabled
-                id="countries_disabled"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-28 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-6 md:w-full md:h-auto"
+                defaultValue={0}
+                className="bg-white px-1 rounded-lg text-xs py-3"
               >
                 <option selected> Ex: IA, Software, Saúde</option>
                 <option value="US">United States</option>
               </select>
               <p className="text-xs">Em..</p>
-
               <select
-                disabled
-                id="countries_disabled"
-                className="bg-gray-50 border border-gray-300 text-gray-900 
-              text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-28 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-6 md:w-3/4 md:h-auto"
+                defaultValue={0}
+                className="bg-white px-1 rounded-lg text-xs py-3 w-16"
               >
                 <option selected> Ex: IA, Software, Saúde</option>
                 <option value="US">United States</option>
@@ -53,32 +49,29 @@ export default function page() {
           </div>
         </section>
       </div>
-
-      <section className="w-full flex items-center flex-col my-9 px-3">
-        <Badge>
-          <p className="text-xs text-secondary border-2 px-3 py-1 rounded-full">
-            O escritório
-          </p>
-          <p className="text-xs  text-secondary">
-            Entenda do que se trata o escritório!
-          </p>
-        </Badge>
-        <h2 className="text-xl text-center text-secondary font-semibold mt-2">
+      <section className="w-full flex items-center flex-col my-5 px-3">
+        <Badge
+          content="Entenda do que se trata o escritório!"
+          title="O Escritório"
+          className="text-secondary"
+        />
+        <h2 className="text-2xl max-w-80 text-center text-secondary font-semibold">
           O que é o Escritório de Projetos e Parcerias?
         </h2>
-        <div className="flex flex-row mt-5 w-full justify-center md:gap-40 gap-7">
-          <div className="flex flex-row items-center gap-4 self-start">
+        <div className="flex flex-row mt-5 w-full max-w-80 md:max-w-4xl justify-center md:gap-10 gap-7">
+          <div className="self-start justify-center items-center flex flex-col">
             <Image
               src="/logo.svg"
               alt="Logo escritório de projetos"
-              width={60}
-              height={60}
-              className="py-2"
+              width={80}
+              height={80}
             />
-            <p className="text-xs max-w-40">Escritório de projetos da UFC</p>
+            <p className="text-xs max-w-40 text-center">
+              Escritório de projetos da UFC
+            </p>
           </div>
           <div className="">
-            <p className="text-[12px] text-left leading-5 text-slate-700 max-w-96">
+            <p className="text-xs text-left leading-5 text-slate-700">
               O Escritório de Projetos e Parcerias da Universidade Federal do
               Ceará (UFC) é uma entidade dedicada a fornecer suporte e
               assistência em todas as etapas do processo de desenvolvimento de
@@ -92,7 +85,13 @@ export default function page() {
         </div>
       </section>
       <section className="w-full mt-2 p-1 flex flex-col justify-center">
-        <h2 className="text-xl text-center  font-semibold">
+        <Badge
+          color="tertiary"
+          title="Nossas Vitrines"
+          content="Acesse por categorias!"
+          className="text-blueText"
+        />
+        <h2 className="text-3xl italic text-center  font-semibold">
           Exposição de vitrines
         </h2>
         <div className="flex flex-row gap-5 justify-center overflow-y-hidden p-6">
@@ -102,14 +101,14 @@ export default function page() {
         </div>
       </section>
       <section className="p-3 flex flex-col gap-3 mt-14">
-        <Badge color="tertiary">
-          <p className="text-xs border-2 px-3 py-1 rounded-full">
-            Nossas vitrines
-          </p>
-          <p className="text-xs ">Acesse por categorias!</p>
-        </Badge>
+        <Badge
+          color="tertiary"
+          title="Processos Internos"
+          content="Nossos processos internos"
+          className="text-blueText"
+        />
         <div className="flex items-center flex-col">
-          <h2 className="text-4xl text-center italic font-semibold max-w-52 my-5">
+          <h2 className="text-4xl text-center italic font-semibold mb-4">
             Fluxo de Uniformização
           </h2>
           <p className="text-xs text-center italic md:max-w-96">
@@ -162,7 +161,7 @@ export default function page() {
                 Agradecemos a participação de todos os setores neste processo.
               </p>
             </div>
-            <div className="flex flex-col gap-2 md:w-2/4">
+            <div className="flex flex-col gap-2 md:w-2/4 mt-5">
               <CardStage />
               <CardStage />
               <CardStage />
@@ -178,14 +177,27 @@ export default function page() {
             alt="Imagem de pessoas conversando"
             width={60}
             height={60}
-            className="py-2"
+            className="py-2 mb-4"
           />
-          <p className="text-xs">Nos Siga nas redes sociais</p>
-          <div className="flex gap-5">
-            <FacebookIcon size={40} />
-            <Twitter size={40} />
-            <GithubIcon size={40} />
-            <Linkedin size={40} />
+          <p className="text-sm">Nos Siga nas redes sociais</p>
+          <div className="flex gap-5 mt-4">
+            <FacebookIcon color="gray" size={40} />
+            <Twitter color="gray" size={40} />
+            <GithubIcon color="gray" size={40} />
+            <Linkedin color="gray" size={40} />
+          </div>
+          <div className="px-7">
+            <ul className="flex flex-col text-2xl text-gray-400 gap-8 mb-6 mt-6">
+              <li>
+                <p>Social</p>
+              </li>
+              <li>
+                <p>Twitter</p>
+              </li>
+            </ul>
+            <p className="text-center text-xs italic text-gray-400">
+              © 2024 Escritório de Projetos e Parcerias. All rights reserved.
+            </p>
           </div>
         </div>
       </section>
