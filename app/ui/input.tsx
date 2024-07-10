@@ -11,10 +11,13 @@ import { twMerge } from 'tailwind-merge'
 export function Input({ name, className, ...rest }: InputButtonProps) {
   return (
     <div className={twMerge('flex flex-col space-y-2 w-full', className)}>
-      <label className="text-sm" htmlFor="">
+      <label className="text-xs" htmlFor="">
         {name}
       </label>
-      <input {...rest} className="border-2 rounded-md text-black p-2 h-10" />
+      <input
+        {...rest}
+        className="border-2 rounded-md text-black p-2 h-10 text-sm"
+      />
     </div>
   )
 }
@@ -36,7 +39,7 @@ export function TextArea({ name, ...rest }: TextAreaProps) {
 export function Button({ name }: ButtonProps) {
   return (
     <Link
-      className=" bg-blueText w-56 py-2 font-bold text-center rounded-lg text-white mt-4"
+      className=" bg-blueText w-56 py-2 font-bold text-center rounded-lg text-white mt-4 md:w-full"
       href="/"
     >
       {name}
