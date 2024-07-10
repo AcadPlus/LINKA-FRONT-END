@@ -1,15 +1,12 @@
 import React from 'react'
-import Header from '../ui/header'
 import Image from 'next/image'
 import Badge from '../ui/badge-group'
 import CardShowcase from '../ui/card-showcase'
 import CardStage from '../ui/card-stage'
-import { FacebookIcon, Twitter, Linkedin, GithubIcon } from 'lucide-react'
 
 export default function page() {
   return (
     <main className="">
-      <Header />
       <div className="w-full md:flex">
         <Image
           src="/image-home.svg"
@@ -32,7 +29,7 @@ export default function page() {
               <p className="text-xs w-16 ">Busco por..</p>
               <select
                 defaultValue={0}
-                className="bg-white px-1 rounded-lg text-xs py-3"
+                className="bg-white px-1 rounded-full text-xs py-3 border-gray-200 border-2"
               >
                 <option selected> Ex: IA, Software, Saúde</option>
                 <option value="US">United States</option>
@@ -40,7 +37,7 @@ export default function page() {
               <p className="text-xs">Em..</p>
               <select
                 defaultValue={0}
-                className="bg-white px-1 rounded-lg text-xs py-3 w-16"
+                className="bg-white px-1 rounded-full text-xs py-3 w-16 border-gray-200 border-2"
               >
                 <option selected> Ex: IA, Software, Saúde</option>
                 <option value="US">United States</option>
@@ -167,37 +164,6 @@ export default function page() {
               <CardStage />
               <CardStage />
             </div>
-          </div>
-        </div>
-      </section>
-      <section className="mb-6">
-        <div className="flex flex-col items-center gap-2">
-          <Image
-            src="/logo.svg"
-            alt="Imagem de pessoas conversando"
-            width={60}
-            height={60}
-            className="py-2 mb-4"
-          />
-          <p className="text-sm">Nos Siga nas redes sociais</p>
-          <div className="flex gap-5 mt-4">
-            <FacebookIcon color="gray" size={40} />
-            <Twitter color="gray" size={40} />
-            <GithubIcon color="gray" size={40} />
-            <Linkedin color="gray" size={40} />
-          </div>
-          <div className="px-7">
-            <ul className="flex flex-col text-2xl text-gray-400 gap-8 mb-6 mt-6">
-              <li>
-                <p>Social</p>
-              </li>
-              <li>
-                <p>Twitter</p>
-              </li>
-            </ul>
-            <p className="text-center text-xs italic text-gray-400">
-              © 2024 Escritório de Projetos e Parcerias. All rights reserved.
-            </p>
           </div>
         </div>
       </section>
