@@ -17,3 +17,10 @@ export type TextAreaProps = ComponentProps<'textarea'> & {
 export type ButtonProps = ComponentProps<'button'> & {
   name: string
 }
+
+export type CardProps = {
+  id?: number
+  title: string
+  description: string
+  items: string[]
+}

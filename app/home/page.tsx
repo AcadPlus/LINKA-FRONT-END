@@ -4,6 +4,44 @@ import Badge from '../ui/badge-group'
 import CardShowcase from '../ui/card-showcase'
 import CardStage from '../ui/card-stage'
 
+import { CardProps } from '../lib/definitions'
+
+const showcases: CardProps[] = [
+  {
+    id: 1,
+    title: 'Vitrine de Startups',
+    description:
+      'Descubra startups inovadoras, parceiras da UFC, que estão moldando o futuro com soluções disruptivas e transformando ideias em realidade.',
+    items: [
+      'Acesso a ideias inovadoras e tecnologias emergentes',
+      'Oportunidades de networking com empreendedores visionários',
+      'Parcerias estratégicas para desenvolvimento e crescimento',
+    ],
+  },
+  {
+    id: 2,
+    title: 'Vitrine de Competências',
+    description:
+      'Explore uma ampla gama de habilidades e talentos, desenvolvidos em parceria com a UFC, destacando competências essenciais para impulsionar carreiras e negócios.',
+    items: [
+      'Encontre professores com vasta experiência em TCC, teses e doutorados',
+      'Conecte-se com pesquisadores que lideram projetos inovadores',
+      'Aproveite o conhecimento de acadêmicos renomados da UFC',
+    ],
+  },
+  {
+    id: 3,
+    title: 'Vitrine de Laboratórios',
+    description:
+      'Conheça laboratórios de ponta, parceiros da UFC, onde ciência e tecnologia se encontram para criar avanços revolucionários e promover a inovação.',
+    items: [
+      'Acesso a equipamentos e tecnologias de última geração',
+      'Ambiente colaborativo para pesquisa e desenvolvimento',
+      'Suporte técnico especializado de profissionais da UFC',
+    ],
+  },
+]
+
 export default function page() {
   return (
     <main className="">
@@ -92,11 +130,35 @@ export default function page() {
           Exposição de vitrines
         </h2>
         <div className="flex flex-row gap-5 justify-center overflow-y-hidden p-6">
-          <CardShowcase />
-          <CardShowcase />
-          <CardShowcase />
+          {showcases.map((item) => (
+            <CardShowcase
+              description={item.description}
+              title={item.title}
+              items={item.items}
+              key={item.id}
+            />
+          ))}
         </div>
       </section>
+      {/* <section>
+        <Badge
+          content="Faça parte da comunidade!"
+          title="Link@!"
+          className="text-secondary"
+        />
+        <h2>Quero ser parceiro!</h2>
+        <p>
+          Participe da comunidade de pesquisa, startups, projetos e parceiras da
+          UFC através do preenchimento de um formulário de acordo com o seu
+          cenário atual!
+        </p>
+        <form action="">
+          <label htmlFor=""></label>
+          <input type="radio" name="" id="" />
+          <label htmlFor=""></label>
+          <input type="radio" name="" id="" />
+        </form>
+      </section> */}
       <section className="p-3 flex flex-col gap-3 mt-14">
         <Badge
           color="tertiary"
