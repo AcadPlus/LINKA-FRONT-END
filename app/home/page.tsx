@@ -64,7 +64,7 @@ export default function page() {
           </p>
           <div className="flex flex-row items-center text-secondary">
             <form className="flex flex-row gap-2 items-center">
-              <p className="text-xs w-16 ">Busco por..</p>
+              <p className="text-xs">Busco por..</p>
               <select
                 defaultValue={0}
                 className="bg-white px-1 rounded-full text-xs py-3 border-gray-200 border-2"
@@ -129,7 +129,7 @@ export default function page() {
         <h2 className="text-3xl italic text-center  font-semibold">
           Exposição de vitrines
         </h2>
-        <div className="flex flex-row gap-5 justify-center overflow-y-hidden p-6">
+        <div className="flex flex-row gap-5 overflow-y-hidden p-6">
           {showcases.map((item) => (
             <CardShowcase
               description={item.description}
