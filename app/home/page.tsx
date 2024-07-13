@@ -5,6 +5,7 @@ import CardShowcase from '../ui/card-showcase'
 import CardStage from '../ui/card-stage'
 
 import { CardProps } from '../lib/definitions'
+import Header from '../ui/header'
 
 const showcases: CardProps[] = [
   {
@@ -53,34 +54,37 @@ export default function page() {
           height={40}
           className="w-full md:w-2/4 md:order-1"
         />
-        <section className="bg-primary w-full py-5 px-5 flex flex-col gap-3 md:w-2/4 md:justify-center">
-          <p className="text-secondary md:text-xl">Bem vindo!</p>
-          <h1 className="text-secondary max-w-64 text-left font-bold text-2xl w-full md:text-3xl md:max-w-none lg:text-4xl">
-            Conecte-se com Empresas e Parceiros da Comunidade UFC
-          </h1>
-          <p className="md:max-w-96 text-secondary text-xs">
-            Promovemos a conexão entre você, iniciativas da UFC e empresas
-            parceiras externas!
-          </p>
-          <div className="flex flex-row items-center text-secondary">
-            <form className="flex flex-row gap-2 items-center">
-              <p className="text-xs">Busco por..</p>
-              <select
-                defaultValue={0}
-                className="bg-white px-1 rounded-full text-xs py-3 border-gray-200 border-2"
-              >
-                <option selected> Ex: IA, Software, Saúde</option>
-                <option value="US">United States</option>
-              </select>
-              <p className="text-xs">Em..</p>
-              <select
-                defaultValue={0}
-                className="bg-white px-1 rounded-full text-xs py-3 w-16 border-gray-200 border-2"
-              >
-                <option selected> Ex: IA, Software, Saúde</option>
-                <option value="US">United States</option>
-              </select>
-            </form>
+        <section className="bg-primary w-full py-5 flex flex-col gap-3 md:w-2/4 md:justify-center">
+          <Header />
+          <div className="flex flex-col p-5 space-y-4">
+            <p className="text-secondary md:text-xl">Bem vindo!</p>
+            <h1 className="text-secondary max-w-64 text-left font-bold text-2xl w-full md:text-3xl md:max-w-none lg:text-4xl">
+              Conecte-se com Empresas e Parceiros da Comunidade UFC
+            </h1>
+            <p className="md:max-w-96 text-secondary text-xs">
+              Promovemos a conexão entre você, iniciativas da UFC e empresas
+              parceiras externas!
+            </p>
+            <div className="flex flex-row items-center text-secondary">
+              <form className="flex flex-row gap-2 items-center">
+                <p className="text-xs">Busco por..</p>
+                <select
+                  defaultValue={0}
+                  className="bg-white px-1 rounded-full text-xs py-3 border-gray-200 border-2"
+                >
+                  <option selected> Ex: IA, Software, Saúde</option>
+                  <option value="US">United States</option>
+                </select>
+                <p className="text-xs">Em..</p>
+                <select
+                  defaultValue={0}
+                  className="bg-white px-1 rounded-full text-xs py-3 w-16 border-gray-200 border-2"
+                >
+                  <option selected> Ex: IA, Software, Saúde</option>
+                  <option value="US">United States</option>
+                </select>
+              </form>
+            </div>
           </div>
         </section>
       </div>
