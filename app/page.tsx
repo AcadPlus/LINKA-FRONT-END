@@ -52,13 +52,14 @@ export default function page() {
           alt="Imagem de pessoas conversando"
           width={40}
           height={40}
+          priority
           className="w-full md:w-2/4 md:order-1 sm:h-2/4 md:h-auto"
         />
         <section className="bg-primary w-full flex flex-col gap-3 md:w-2/4 md:justify-center">
           <Header />
           <div className="flex flex-col p-5 space-y-2 sm:space-y-4 xl:pl-28">
             <p className="text-secondary md:text-xl">Bem vindo!</p>
-            <h1 className="text-secondary max-w-64 text-left font-bold text-xl w-full sm:text-2xl md:max-w-lg lg:text-2xl xl:text-4xl">
+            <h1 className="text-secondary max-w-64 text-left font-bold text-xl w-full sm:text-2xl md:max-w-lg lg:text-2xl text xl:text-4xl">
               Conecte-se com Empresas e Parceiros da Comunidade UFC
             </h1>
             <p className="md:max-w-96 text-secondary text-xs sm:text-sm md:text-base">
@@ -69,7 +70,7 @@ export default function page() {
               <form className="flex flex-row gap-2 items-center w-full">
                 <p className="text-xs">Busco por..</p>
                 <select
-                  defaultValue={0}
+                  defaultValue=""
                   className="w-full max-w-60 bg-white px-1 rounded-full text-xs py-1 border-gray-200 border-2"
                 >
                   <option className="text-xs" defaultValue="" selected>
@@ -80,10 +81,13 @@ export default function page() {
                 </select>
                 <p className="text-xs">Em..</p>
                 <select
-                  defaultValue={0}
+                  defaultValue=""
                   className="w-full max-w-40 bg-white px-1 rounded-full text-xs py-1 border-gray-200 border-2"
                 >
-                  <option selected> Ex: IA, Software, Saúde</option>
+                  <option defaultValue="" selected>
+                    {' '}
+                    Ex: IA, Software, Saúde
+                  </option>
                   <option value="US">United States</option>
                 </select>
               </form>

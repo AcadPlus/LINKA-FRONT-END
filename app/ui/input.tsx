@@ -16,7 +16,7 @@ export function Input({ name, className, ...rest }: InputButtonProps) {
       </label>
       <input
         {...rest}
-        className="border-2 rounded-md text-black p-2 h-10 text-sm"
+        className="border-2 rounded-md text-black p-2 h-10 text-xs"
       />
     </div>
   )
@@ -39,7 +39,7 @@ export function TextArea({ name, ...rest }: TextAreaProps) {
 export function Button({ name }: ButtonProps) {
   return (
     <Link
-      className=" bg-blueText w-56 py-2 font-bold text-center rounded-lg text-white mt-4 md:w-full"
+      className=" bg-blueText w-56 p-2 font-bold text-center rounded-lg text-white mt-4 md:w-full"
       href="/"
     >
       {name}
