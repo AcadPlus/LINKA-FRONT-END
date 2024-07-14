@@ -52,33 +52,36 @@ export default function page() {
           alt="Imagem de pessoas conversando"
           width={40}
           height={40}
-          className="w-full md:w-2/4 md:order-1"
+          className="w-full md:w-2/4 md:order-1 sm:h-2/4 md:h-auto"
         />
-        <section className="bg-primary w-full py-5 flex flex-col gap-3 md:w-2/4 md:justify-center">
+        <section className="bg-primary w-full flex flex-col gap-3 md:w-2/4 md:justify-center">
           <Header />
-          <div className="flex flex-col p-5 space-y-4 xl:pl-28">
+          <div className="flex flex-col p-5 space-y-2 sm:space-y-4 xl:pl-28">
             <p className="text-secondary md:text-xl">Bem vindo!</p>
-            <h1 className="text-secondary max-w-64 text-left font-bold text-2xl w-full md:text-xl md:max-w-lg lg:text-2xl xl:text-4xl">
+            <h1 className="text-secondary max-w-64 text-left font-bold text-xl w-full sm:text-2xl md:max-w-lg lg:text-2xl xl:text-4xl">
               Conecte-se com Empresas e Parceiros da Comunidade UFC
             </h1>
-            <p className="md:max-w-96 text-secondary text-xs">
+            <p className="md:max-w-96 text-secondary text-xs sm:text-sm md:text-base">
               Promovemos a conexão entre você, iniciativas da UFC e empresas
               parceiras externas!
             </p>
             <div className="flex flex-row items-center text-secondary">
-              <form className="flex flex-row gap-2 items-center">
+              <form className="flex flex-row gap-2 items-center w-full">
                 <p className="text-xs">Busco por..</p>
                 <select
                   defaultValue={0}
-                  className="bg-white px-1 rounded-full text-xs py-3 border-gray-200 border-2"
+                  className="w-full max-w-60 bg-white px-1 rounded-full text-xs py-1 border-gray-200 border-2"
                 >
-                  <option selected> Ex: IA, Software, Saúde</option>
+                  <option className="text-xs" defaultValue="" selected>
+                    {' '}
+                    Ex: IA, Software, Saúde
+                  </option>
                   <option value="US">United States</option>
                 </select>
                 <p className="text-xs">Em..</p>
                 <select
                   defaultValue={0}
-                  className="bg-white px-1 rounded-full text-xs py-3 w-16 md:w-full border-gray-200 border-2"
+                  className="w-full max-w-40 bg-white px-1 rounded-full text-xs py-1 border-gray-200 border-2"
                 >
                   <option selected> Ex: IA, Software, Saúde</option>
                   <option value="US">United States</option>
@@ -94,7 +97,7 @@ export default function page() {
           title="O Escritório"
           className="text-secondary"
         />
-        <h2 className="text-2xl max-w-80 text-center text-secondary font-semibold">
+        <h2 className="text-xl  max-w-80 text-center text-secondary font-semibold">
           O que é o Escritório de Projetos e Parcerias?
         </h2>
         <div className="flex flex-row mt-5 w-full max-w-80 md:max-w-4xl justify-center md:gap-10 gap-7">
@@ -130,7 +133,7 @@ export default function page() {
           content="Acesse por categorias!"
           className="text-blueText"
         />
-        <h2 className="text-3xl italic text-center  font-semibold">
+        <h2 className="text-xl sm:text-2xl md:text-3xl italic text-center  font-semibold">
           Exposição de vitrines
         </h2>
         <div className="flex flex-row gap-5 overflow-y-hidden p-6 container mx-auto">
@@ -171,7 +174,7 @@ export default function page() {
           className="text-blueText"
         />
         <div className="flex items-center flex-col">
-          <h2 className="text-4xl text-center italic font-semibold mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl text-center italic font-semibold mb-4">
             Fluxo de Uniformização
           </h2>
           <p className="text-xs text-center italic md:max-w-96">

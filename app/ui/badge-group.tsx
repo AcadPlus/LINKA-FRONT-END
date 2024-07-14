@@ -30,7 +30,7 @@ export default function Badge({
       <p className="text-xs border-2 px-3 py-1 bg-white rounded-full">
         {title}
       </p>
-      <p className="text-xs ">{content}</p>
+      <p className="text-xs">{content}</p>
       <ArrowRight size={15} />
     </button>
   )

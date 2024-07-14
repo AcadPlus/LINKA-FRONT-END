@@ -22,9 +22,9 @@ export default function Header() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
       if (scrollPosition > 400 && window.innerWidth > 768) {
-        myRef.current?.classList.remove('md:w-auto')
+        myRef.current?.classList.remove('lg:w-auto')
         console.log(myRef)
-        myRef.current?.children[0].classList.remove('md:w-[48vw]')
+        myRef.current?.children[0].classList.remove('lg:w-[48vw]')
         myRef.current?.children[0].classList.add('w-full')
         myRef.current?.children[1].classList.add('hidden')
         const a = document.getElementById('hidden')
@@ -32,8 +32,8 @@ export default function Header() {
       }
 
       if (scrollPosition === 0 && window.innerWidth > 768) {
-        myRef.current?.classList.add('md:w-auto')
-        myRef.current?.children[0].classList.add('md:w-[48vw]')
+        myRef.current?.classList.add('lg:w-auto')
+        myRef.current?.children[0].classList.add('lg:w-[48vw]')
         myRef.current?.children[1].classList.remove('hidden')
         const a = document.getElementById('hidden')
         a?.classList.add('md:hidden')
@@ -48,9 +48,9 @@ export default function Header() {
   return (
     <header
       ref={myRef}
-      className="bg-primary flex flex-row fixed top-0 items-center w-full md:w-auto transition duration-500"
+      className="bg-primary flex flex-row fixed top-0 items-center w-full lg:w-auto transition duration-500"
     >
-      <nav className="flex items-center justify-between p-4 md:w-[48vw] px-7 w-full xl:pl-28">
+      <nav className="flex items-center justify-between p-4 lg:w-[48vw] md:w-full px-7 w-full xl:pl-28">
         <div className="flex items-center space-x-4">
           <Image
             src="/logo.svg"
@@ -80,8 +80,8 @@ export default function Header() {
           </button>
         </div>
         <div
-          data-isOpen={isOpen}
-          className="data-[isOpen=true]:block hidden absolute top-16 left-0 z-10 w-full bg-primary px-4 py-2 md:static md:block md:w-auto md:px-0 md:py-0"
+          data-isopen={isOpen}
+          className="data-[isopen=true]:block hidden absolute top-16 left-0 z-10 w-full bg-primary px-4 py-2 md:static md:block md:w-auto md:px-0 md:py-0"
         >
           <ul className="space-y-2 md:flex md:space-x-4 md:space-y-0">
             {links.map((item) => (
