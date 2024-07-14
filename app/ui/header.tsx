@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 
@@ -16,9 +16,41 @@ const links = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
+  const myRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      if (scrollPosition > 400 && window.innerWidth > 768) {
+        myRef.current?.classList.remove('md:w-auto')
+        console.log(myRef)
+        myRef.current?.children[0].classList.remove('md:w-[48vw]')
+        myRef.current?.children[0].classList.add('w-full')
+        myRef.current?.children[1].classList.add('hidden')
+        const a = document.getElementById('hidden')
+        a?.classList.remove('md:hidden')
+      }
+
+      if (scrollPosition === 0 && window.innerWidth > 768) {
+        myRef.current?.classList.add('md:w-auto')
+        myRef.current?.children[0].classList.add('md:w-[48vw]')
+        myRef.current?.children[1].classList.remove('hidden')
+        const a = document.getElementById('hidden')
+        a?.classList.add('md:hidden')
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <header className="bg-primary flex flex-row fixed top-0 items-center w-full md:w-auto">
-      <nav className="container mx-auto flex items-center justify-between p-4 md:w-[48vw] px-7">
+    <header
+      ref={myRef}
+      className="bg-primary flex flex-row fixed top-0 items-center w-full md:w-auto transition duration-500"
+    >
+      <nav className="flex items-center justify-between p-4 md:w-[48vw] px-7 w-full xl:pl-28">
         <div className="flex items-center space-x-4">
           <Image
             src="/logo.svg"
@@ -62,10 +94,18 @@ export default function Header() {
                 </a>
               </li>
             ))}
+            <li
+              id="hidden"
+              className="hover:underline hover:ease-in duration-300 transition-all md:hidden"
+            >
+              <a href="/contact" className="text-sm font-medium">
+                Contato
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
-      <div className="w-[50vw] absolute left-[1200px]">
+      <div className="w-[50vw] absolute left-[1200px] right-0">
         <a href="/contact" className=" bg-primary p-2 text-sm font-medium">
           Contato
         </a>

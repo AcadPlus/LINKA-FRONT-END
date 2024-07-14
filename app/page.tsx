@@ -56,9 +56,9 @@ export default function page() {
         />
         <section className="bg-primary w-full py-5 flex flex-col gap-3 md:w-2/4 md:justify-center">
           <Header />
-          <div className="flex flex-col p-5 space-y-4">
+          <div className="flex flex-col p-5 space-y-4 xl:pl-28">
             <p className="text-secondary md:text-xl">Bem vindo!</p>
-            <h1 className="text-secondary max-w-64 text-left font-bold text-2xl w-full md:text-3xl md:max-w-none lg:text-4xl">
+            <h1 className="text-secondary max-w-64 text-left font-bold text-2xl w-full md:text-xl md:max-w-lg lg:text-2xl xl:text-4xl">
               Conecte-se com Empresas e Parceiros da Comunidade UFC
             </h1>
             <p className="md:max-w-96 text-secondary text-xs">
@@ -78,7 +78,7 @@ export default function page() {
                 <p className="text-xs">Em..</p>
                 <select
                   defaultValue={0}
-                  className="bg-white px-1 rounded-full text-xs py-3 w-16 border-gray-200 border-2"
+                  className="bg-white px-1 rounded-full text-xs py-3 w-16 md:w-full border-gray-200 border-2"
                 >
                   <option selected> Ex: IA, Software, Saúde</option>
                   <option value="US">United States</option>
@@ -133,7 +133,7 @@ export default function page() {
         <h2 className="text-3xl italic text-center  font-semibold">
           Exposição de vitrines
         </h2>
-        <div className="flex flex-row gap-5 overflow-y-hidden p-6">
+        <div className="flex flex-row gap-5 overflow-y-hidden p-6 container mx-auto">
           {showcases.map((item) => (
             <CardShowcase
               description={item.description}
