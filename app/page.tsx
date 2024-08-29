@@ -57,37 +57,33 @@ export default function page() {
         />
         <section className="bg-primary w-full flex flex-col gap-3 md:w-2/4 md:justify-center">
           <Header />
-          <div className="flex flex-col p-5 space-y-2 sm:space-y-4 xl:pl-28">
-            <p className="text-secondary md:text-xl">Bem vindo!</p>
-            <h1 className="text-secondary max-w-64 text-left font-bold text-xl w-full sm:text-2xl md:max-w-lg lg:text-2xl text xl:text-4xl">
+          <div className="flex flex-col p-5 space-y-3 sm:space-y-4 xl:pl-28">
+            <p className="text-secondary md:text-2xl">Bem vindo!</p>
+            <h1 className="text-secondary max-w-64 text-left font-bold text-xl w-full sm:text-3xl md:max-w-lg lg:text-3xl text xl:text-4xl">
               Conecte-se com Empresas e Parceiros da Comunidade UFC
             </h1>
-            <p className="md:max-w-96 text-secondary text-xs sm:text-sm md:text-base">
+            <p className="md:max-w-96 text-secondary text-xs sm:text-sm md:text-lg">
               Promovemos a conexão entre você, iniciativas da UFC e empresas
               parceiras externas!
             </p>
             <div className="flex flex-row items-center text-secondary">
               <form className="flex flex-row gap-2 items-center w-full">
-                <p className="text-xs">Busco por..</p>
+                <p className="text-xs md:text-sm">Busco por..</p>
                 <select
                   defaultValue=""
                   className="w-full max-w-60 bg-white px-1 rounded-full text-xs py-1 border-gray-200 border-2"
                 >
-                  <option className="text-xs" defaultValue="" selected>
-                    {' '}
+                  <option className="text-xs" value="">
                     Ex: IA, Software, Saúde
                   </option>
                   <option value="US">United States</option>
                 </select>
-                <p className="text-xs">Em..</p>
+                <p className="text-xs md:text-sm">em..</p>
                 <select
                   defaultValue=""
-                  className="w-full max-w-40 bg-white px-1 rounded-full text-xs py-1 border-gray-200 border-2"
+                  className="w-full max-w-40 bg-white px-2 rounded-full text-xs py-1 border-gray-200 border-2"
                 >
-                  <option defaultValue="" selected>
-                    {' '}
-                    Ex: IA, Software, Saúde
-                  </option>
+                  <option value="">Ex: IA, Software, Saúde</option>
                   <option value="US">United States</option>
                 </select>
               </form>
@@ -95,13 +91,13 @@ export default function page() {
           </div>
         </section>
       </div>
-      <section className="w-full flex items-center flex-col my-5 px-3">
+      <section className="w-full flex items-center flex-col my-2 px-3">
         <Badge
           content="Entenda do que se trata o escritório!"
           title="O Escritório"
           className="text-secondary"
         />
-        <h2 className="text-xl  max-w-80 text-center text-secondary font-semibold">
+        <h2 className="text-xl md:text-2xl max-w-90 text-center text-secondary font-semibold">
           O que é o Escritório de Projetos e Parcerias?
         </h2>
         <div className="flex flex-row mt-5 w-full max-w-80 md:max-w-4xl justify-center md:gap-10 gap-7">
@@ -117,7 +113,7 @@ export default function page() {
             </p>
           </div>
           <div className="">
-            <p className="text-xs text-left leading-5 text-slate-700">
+            <p className="text-xs md:text-base md:text-justify leading-5 text-slate-700">
               O Escritório de Projetos e Parcerias da Universidade Federal do
               Ceará (UFC) é uma entidade dedicada a fornecer suporte e
               assistência em todas as etapas do processo de desenvolvimento de
@@ -137,7 +133,8 @@ export default function page() {
           content="Acesse por categorias!"
           className="text-blueText"
         />
-        <h2 className="text-xl sm:text-2xl md:text-3xl italic text-center  font-semibold">
+        {/* melhorar */}
+        <h2 className="text-xl sm:text-2xl md:text-2xl italic text-center font-semibold">
           Exposição de vitrines
         </h2>
         <div className="flex flex-row gap-5 overflow-y-hidden p-6 container mx-auto">

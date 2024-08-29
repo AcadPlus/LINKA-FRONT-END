@@ -105,13 +105,13 @@ export default function Header() {
           className="data-[isopen=true]:block hidden absolute top-16 left-0 z-10 w-full bg-primary px-4 py-2 md:static
           md:block md:w-auto md:px-0 md:py-0"
         >
-          <ul className="space-y-2 md:flex md:space-x-4 md:space-y-0 text-center">
+          <ul className="space-y-2 md:flex md:space-x-10 md:space-y-0 text-center">
             {links.map((item) => (
               <li
                 key={item.name}
                 className="hover:underline hover:ease-in duration-300 transition-all"
               >
-                <a href="#" className="text-sm font-medium">
+                <a href="#" className="text-base font-medium">
                   {item.name}
                 </a>
               </li>
@@ -120,7 +120,7 @@ export default function Header() {
               id="hidden"
               className="hover:underline hover:ease-in duration-300 transition-all md:hidden"
             >
-              <a href="/contact" className="text-sm font-medium">
+              <a href="/contact" className="text-base font-medium	 ">
                 Contato
               </a>
             </li>
@@ -128,7 +128,7 @@ export default function Header() {
         </div>
       </nav>
       <div className="w-[50vw] absolute left-[1200px] right-0">
-        <a href="/contact" className=" bg-primary p-2 text-sm font-medium">
+        <a href="/contact" className=" bg-primary p-2 text-base font-medium	">
           Contato
         </a>
       </div>
