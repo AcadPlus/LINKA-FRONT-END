@@ -9,7 +9,9 @@ export default function CardShowcase({ description, title, items }: CardProps) {
         <Mail size={20} className="text-gray-600" />
       </div>
       <h3 className="font-semibold text-lg text-gray-800">{title}</h3>
-      <p className="text-xs md:text-base text-gray-700 h-16 md:mb-10">{description}</p>
+      <p className="text-xs md:text-base text-gray-700 h-16 md:mb-10">
+        {description}
+      </p>
       <ul className="flex flex-col gap-2">
         {items.map((item) => (
           <li key={item} className="text-xs md:text-sm flex items-center gap-2">
