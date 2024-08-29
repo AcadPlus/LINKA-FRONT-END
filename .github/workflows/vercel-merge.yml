@@ -22,4 +22,3 @@ jobs:
       - name: preview-url
         run: |
           echo ${{ steps.vercel-deploy.outputs.preview-url }}
-          
