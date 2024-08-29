@@ -73,8 +73,7 @@ export default function page() {
                   defaultValue=""
                   className="w-full max-w-60 bg-white px-1 rounded-full text-xs py-1 border-gray-200 border-2"
                 >
-                  <option className="text-xs" defaultValue="" selected>
-                    {' '}
+                  <option className="text-xs" value="">
                     Ex: IA, Software, Saúde
                   </option>
                   <option value="US">United States</option>
@@ -84,10 +83,7 @@ export default function page() {
                   defaultValue=""
                   className="w-full max-w-40 bg-white px-1 rounded-full text-xs py-1 border-gray-200 border-2"
                 >
-                  <option defaultValue="" selected>
-                    {' '}
-                    Ex: IA, Software, Saúde
-                  </option>
+                  <option value="">Ex: IA, Software, Saúde</option>
                   <option value="US">United States</option>
                 </select>
               </form>
