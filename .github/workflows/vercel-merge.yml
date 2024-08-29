@@ -5,7 +5,10 @@ on:
     branches:
       - develop
       - release
-      - teste
+  pull_request:
+    branches:
+      - develop
+      - release
 
 jobs:
   test:
@@ -17,7 +20,7 @@ jobs:
           npm ci
           npm run build
       - name: Test results
-        run: echo "Tests completed."
+        run: echo "Testes concluídos."
 
   build_and_deploy:
     if: github.ref == 'refs/heads/release'
