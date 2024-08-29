@@ -57,11 +57,13 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [pathname])
 
-  if (isOpen) {
-    document?.body.classList.add('overflow-hidden')
-  } else {
-    document?.body.classList.remove('overflow-hidden')
-  }
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('overflow-hidden')
+    } else {
+      document.body.classList.remove('overflow-hidden')
+    }
+  }, [isOpen])
 
   return (
     <header
