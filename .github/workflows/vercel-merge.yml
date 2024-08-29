@@ -11,6 +11,13 @@ on:
       - release
 
 jobs:
+  print_ref:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Print GitHub Ref
+          run: | 
+            echo GitHub Ref: ${{ github.ref }}
   test:
     if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
