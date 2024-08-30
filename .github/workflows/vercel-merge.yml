@@ -16,11 +16,17 @@ jobs:
     if: ${{github.ref == 'refs/heads/develop' || github.base_ref == 'develop'}}
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          npm ci
-          npm run build
-      - name: Resultados dos testes
-        run: echo "Testes Completados."
+      - uses: amondnet/vercel-action@v20
+        id: vercel-deploy
+        with:
+          vercel-args: --pre
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-org-id: ${{ secrets.ORG_ID }}
+          vercel-project-id: ${{ secrets.PROJECT_ID }}
+      - name: preview-url
+        run: |
+          echo ${{ steps.vercel-deploy.outputs.preview-url }}
 
   build_and_deploy:
     runs-on: ubuntu-latest
