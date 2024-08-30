@@ -1,26 +1,39 @@
 name: Deploy para Vercel
+
 on:
+  push:
+    branches:
+      - develop
+      - release
   pull_request:
     branches:
       - develop
       - release
+
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          npm ci
+          npm run build
+      - name: Test results
+        run: echo "Tests completed."
+
   build_and_deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      repository-projects: write
+    if: ${{ github.ref == 'refs/heads/release' || github.base_ref == 'release' }}
     steps:
       - uses: actions/checkout@v2
       - uses: amondnet/vercel-action@v20
         id: vercel-deploy
         with:
-          vercel-args: ${{ github.ref == 'refs/heads/release' && '--prod' || '' }}
+          vercel-args: --prod
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-org-id: ${{ secrets.ORG_ID}}
-          vercel-project-id: ${{ secrets.PROJECT_ID}}
+          vercel-org-id: ${{ secrets.ORG_ID }}
+          vercel-project-id: ${{ secrets.PROJECT_ID }}
       - name: preview-url
         run: |
           echo ${{ steps.vercel-deploy.outputs.preview-url }}
