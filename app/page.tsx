@@ -5,7 +5,6 @@ import CardShowcase from './ui/card-showcase'
 import CardStage from './ui/card-stage'
 
 import { CardProps } from './lib/definitions'
-import Header from './ui/header'
 
 const showcases: CardProps[] = [
   {
@@ -46,17 +45,16 @@ const showcases: CardProps[] = [
 export default function page() {
   return (
     <main className="">
-      <div className="w-full md:flex">
+      <div className="w-full h-[80vh] md:flex">
         <Image
           src="/image-home.svg"
           alt="Imagem de pessoas conversando"
           width={40}
           height={40}
           priority
-          className="w-full md:w-2/4 md:order-1 sm:h-2/4 md:h-auto"
+          className="w-full md:w-[40%] md:order-1 sm:h-2/4 md:h-auto object-cover"
         />
-        <section className="bg-primary w-full flex flex-col gap-3 md:w-2/4 md:justify-center">
-          <Header />
+        <section className="bg-primary w-full flex flex-col gap-3 md:w-[60%] md:justify-center">
           <div className="flex flex-col p-5 space-y-3 sm:space-y-4 xl:pl-28">
             <p className="text-secondary md:text-2xl">Bem vindo!</p>
             <h1 className="text-secondary max-w-64 text-left font-bold text-xl w-full sm:text-3xl md:max-w-lg lg:text-3xl text xl:text-4xl">
