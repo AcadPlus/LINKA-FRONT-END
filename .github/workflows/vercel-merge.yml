@@ -34,6 +34,10 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/release' || github.base_ref == 'release' }}
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
     steps:
       - uses: actions/checkout@v2
       - uses: amondnet/vercel-action@v20
