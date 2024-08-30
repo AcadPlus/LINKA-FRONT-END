@@ -62,6 +62,7 @@ export default function page() {
             <h1 className="text-secondary max-w-64 text-left font-bold text-xl w-full sm:text-3xl md:max-w-lg lg:text-3xl text xl:text-4xl">
               Conecte-se com Empresas e Parceiros da Comunidade UFC
             </h1>
+            
             <p className="md:max-w-96 text-secondary text-xs sm:text-sm md:text-lg">
               Promovemos a conexão entre você, iniciativas da UFC e empresas
               parceiras externas!
