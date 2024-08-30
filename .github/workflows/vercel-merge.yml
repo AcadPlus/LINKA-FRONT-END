@@ -13,13 +13,14 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    if: ${{github.ref == 'refs/heads/develop' || github.base_ref == 'develop'}}
     steps:
       - uses: actions/checkout@v2
       - run: |
           npm ci
           npm run build
-      - name: Test results
-        run: echo "Tests completed."
+      - name: Resultados dos testes
+        run: echo "Testes Completados."
 
   build_and_deploy:
     runs-on: ubuntu-latest
