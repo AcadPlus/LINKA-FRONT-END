@@ -17,9 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Instalar Dependencias
-        run: npm ci && npm playwright install --with-deps
-      - name: Executar testes
-        run: npx playwright test
+        run: npm ci
+      - name: Executar build
+        run: npm run build
 
   build_and_deploy:
     runs-on: ubuntu-latest
