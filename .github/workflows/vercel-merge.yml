@@ -11,15 +11,7 @@ on:
       - release
 
 jobs:
-  print_ref:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - name: Print GitHub Ref
-          run: | 
-            echo GitHub Ref: ${{ github.ref }}
   test:
-    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,11 +19,11 @@ jobs:
           npm ci
           npm run build
       - name: Test results
-        run: echo "Testes concluídos."
+        run: echo "Tests completed."
 
   build_and_deploy:
-    if: github.ref == 'refs/heads/release'
     runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/release' || github.base_ref == 'release' }}
     steps:
       - uses: actions/checkout@v2
       - uses: amondnet/vercel-action@v20
