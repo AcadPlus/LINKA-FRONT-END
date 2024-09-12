@@ -3,7 +3,7 @@ import { VariantProps, tv } from 'tailwind-variants'
 import { ArrowRight } from 'lucide-react'
 
 const button = tv({
-  base: 'flex flex-row p-1 rounded-full gap-2 items-center justify-center max-w-110 self-center mt-20 mb-10 font-semibold transition duration-500 ease-in-out hover:scale-125',
+  base: 'flex flex-row p-1 rounded-full gap-2 items-center justify-center max-w-110 self-center mt-10 mb-5 md:mt-20 md:mb-10 font-semibold transition duration-500 ease-in-out hover:scale-125',
   variants: {
     color: {
       primary: 'bg-primary',

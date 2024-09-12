@@ -2,10 +2,9 @@ import React from 'react'
 import Image from 'next/image'
 import Badge from './ui/badge-group'
 import CardShowcase from './ui/card-showcase'
-import CardStage from './ui/card-stage'
 
 import { CardProps } from './lib/definitions'
-import Header from './ui/header'
+import { RadioButton } from './ui/input'
 
 const showcases: CardProps[] = [
   {
@@ -46,17 +45,16 @@ const showcases: CardProps[] = [
 export default function page() {
   return (
     <main className="">
-      <div className="w-full md:flex">
+      <div className="w-full md:h-[80vh] md:flex">
         <Image
           src="/image-home.svg"
           alt="Imagem de pessoas conversando"
           width={40}
           height={40}
           priority
-          className="w-full md:w-2/4 md:order-1 sm:h-2/4 md:h-auto"
+          className="w-full md:w-[40%] md:order-1 sm:h-2/4 md:h-auto object-cover"
         />
-        <section className="bg-primary w-full flex flex-col gap-3 md:w-2/4 md:justify-center">
-          <Header />
+        <section className="bg-primary w-full flex flex-col gap-3 md:w-[60%] md:justify-center">
           <div className="flex flex-col p-5 space-y-3 sm:space-y-4 xl:pl-28">
             <p className="text-secondary md:text-2xl">Bem vindo!</p>
             <h1 className="text-secondary max-w-64 text-left font-bold text-xl w-full sm:text-3xl md:max-w-lg lg:text-3xl text xl:text-4xl">
@@ -83,8 +81,8 @@ export default function page() {
                   defaultValue=""
                   className="w-full max-w-40 bg-white px-2 rounded-full text-xs py-1 border-gray-200 border-2"
                 >
-                  <option value="">Ex: IA, Software, Saúde</option>
-                  <option value="US">United States</option>
+                  <option value="">Startups</option>
+                  <option value="US">Laboratórios</option>
                 </select>
               </form>
             </div>
@@ -148,33 +146,45 @@ export default function page() {
           ))}
         </div>
       </section>
-      {/* <section>
+      <section className="w-full mt-2 p-1 flex flex-col justify-center items-center">
         <Badge
           content="Faça parte da comunidade!"
           title="Link@!"
           className="text-secondary"
         />
-        <h2>Quero ser parceiro!</h2>
-        <p>
+        <h2 className="text-xl sm:text-2xl md:text-2xl italic text-center font-semibold">
+          Quero ser parceiro
+        </h2>
+        <p className="text-xs text-center max-w-96 italic leading-3 mt-2">
           Participe da comunidade de pesquisa, startups, projetos e parceiras da
           UFC através do preenchimento de um formulário de acordo com o seu
           cenário atual!
         </p>
         <form action="">
-          <label htmlFor=""></label>
+          {/* <label htmlFor=""></label>
           <input type="radio" name="" id="" />
           <label htmlFor=""></label>
-          <input type="radio" name="" id="" />
+          <input type="radio" name="" id="" /> */}
+          <div className="flex flex-col space-y-6 mt-5 md:flex-row md:space-x-14 md:space-y-0">
+            <RadioButton
+              tittle="Quero ser parceiro da UFC"
+              content="Não sou da universidade federal do ceará, mas queria conexão"
+            />
+            <RadioButton
+              tittle="Quero ser parceiro da UFC"
+              content="Não sou da universidade federal do ceará, mas queria conexão"
+            />
+          </div>
         </form>
-      </section> */}
-      <section className="p-3 flex flex-col gap-3 mt-14">
+      </section>
+      <section className="p-3 flex flex-col gap-3">
         <Badge
           color="tertiary"
           title="Processos Internos"
           content="Nossos processos internos"
           className="text-blueText"
         />
-        <div className="flex items-center flex-col">
+        <div className="flex items-center flex-col mb-10">
           <h2 className="text-xl sm:text-2xl md:text-3xl text-center italic font-semibold mb-4">
             Fluxo de Uniformização
           </h2>
@@ -182,8 +192,8 @@ export default function page() {
             Descubra as etapas envolvidas por trás do processo de uniformização
             de setores implantando na Universidade Federal do Ceará
           </p>
-          <div className="flex flex-col md:flex-row mt-6">
-            <div className="mt-3 flex flex-col gap-3 px-6 md:w-[50vw]">
+          <div className="flex flex-col mt-6">
+            <div className="mt-3 flex flex-col gap-3 px-6">
               <p className="text-sm">
                 A Universidade reconhece a importância de uma comunicação clara
                 e eficiente entre seus setores. Para isso, estamos empenhados em
@@ -227,12 +237,6 @@ export default function page() {
               <p className="text-sm">
                 Agradecemos a participação de todos os setores neste processo.
               </p>
-            </div>
-            <div className="flex flex-col gap-2 md:w-2/4 mt-5">
-              <CardStage />
-              <CardStage />
-              <CardStage />
-              <CardStage />
             </div>
           </div>
         </div>
