@@ -1,4 +1,5 @@
 import { ComponentProps } from 'react'
+import { useForm } from 'react-hook-form'
 
 export type BadgeProps = ComponentProps<'button'> & {
   tittle: string
@@ -6,12 +7,14 @@ export type BadgeProps = ComponentProps<'button'> & {
 }
 
 export type InputButtonProps = ComponentProps<'input'> & {
-  name: string
+  labelName: string
   className?: string
+  register: ReturnType<typeof useForm>['register']
 }
 
 export type TextAreaProps = ComponentProps<'textarea'> & {
   name: string
+  register: ReturnType<typeof useForm>['register']
 }
 
 export type ButtonProps = ComponentProps<'button'> & {
@@ -25,7 +28,7 @@ export type CardProps = {
   items: string[]
 }
 
-export type RadioButtomProps = ComponentProps<'input'> & {
+export type RadioButtonProps = ComponentProps<'input'> & {
   tittle: string
   content: string
 }

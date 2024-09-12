@@ -4,10 +4,13 @@ import { Button, Input, TextArea } from '../ui/input'
 export default function page() {
   return (
     <section className="flex flex-col justify-center md:max-w-screen-lg mx-auto w-full md:mb-10 mt-24">
-      <h1 className="text-xl font-bold text-center"> Conexão com empresas</h1>
+      <h1 className="text-2xl font-bold text-center mt-4 mb-8">
+        {' '}
+        Conexão com empresas
+      </h1>
       <form action="" className="space-y-14 px-5">
-        <div className="space-y-2">
-          <p className="font-bold text-center text-sm">
+        <div className="space-y-4">
+          <p className="font-bold text-left text-sm">
             Informações sobre a empresa
           </p>
           <Input name="Empresa" placeholder="Informe o nome da empresa" />
@@ -24,7 +27,7 @@ export default function page() {
           </div>
         </div>
         <div className="space-y-2">
-          <p className="font-bold text-center text-sm">
+          <p className="font-bold text-left text-sm">
             Já está em contato com algum docente ou pesquisador na UFC? Se sim,
             quem?
           </p>

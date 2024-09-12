@@ -192,7 +192,7 @@ export default function page() {
             Descubra as etapas envolvidas por trás do processo de uniformização
             de setores implantando na Universidade Federal do Ceará
           </p>
-          <div className="flex flex-col mt-6">
+          <div className="flex flex-col mt-6 md:px-32">
             <div className="mt-3 flex flex-col gap-3 px-6">
               <p className="text-sm">
                 A Universidade reconhece a importância de uma comunicação clara

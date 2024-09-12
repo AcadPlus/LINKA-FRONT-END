@@ -1,12 +1,42 @@
+'use client'
+
 import React from 'react'
 import { Button, Input, TextArea } from '../ui/input'
+import { z } from 'zod'
+import { useForm } from 'react-hook-form'
 
 export default function Page() {
+  const contactSchema = z.object({
+    firstName: z.string().nonempty('Campo obrigatório'),
+    lastName: z.string().nonempty('Campo obrigatório'),
+    email: z
+      .string()
+      .email('Insira um email válido')
+      .nonempty('Campo obrigatório'),
+    numberPhone: z
+      .string()
+      .regex(/^(\(\d{2}\)\s)?(\d{4,5}-\d{4})$/)
+      .nonempty('Campo obrigatório'),
+    message: z.string().nonempty('Campo obrigatório'),
+  })
+
+  type contactData = z.infer<typeof contactSchema>
+
+  const onSubmit = (data) => {
+    console.log(data)
+  }
+
+  const {
+    handleSubmit,
+    formState: { errors },
+    register,
+  } = useForm<contactData>()
+
   return (
     <div className="flex flex-col justify-center md:max-w-screen-lg mx-auto w-full md:mb-10 mt-8">
       <div className="mt-5 flex flex-col  md:flex-row md:items-center md:gap-32">
         <form
-          action=""
+          onSubmit={handleSubmit(onSubmit)}
           className="flex px-3 gap-2 flex-col items-center md:w-full"
         >
           <div className="md:self-start">
@@ -20,22 +50,29 @@ export default function Page() {
           <div className="w-full md:flex md:gap-3 space-y-2 md:space-y-0">
             <Input
               className="md:w-2/4"
-              name="Nome"
+              register={register('firstName')}
+              labelName="Nome"
               placeholder="Primeiro nome"
             />
             <Input
               className="md:w-2/4"
-              name="Sobrenome"
+              labelName="Sobrenome"
               placeholder="Sobrenome"
+              register={register('lastName')}
             />
           </div>
-          <Input name="Seu email" placeholder="seuemail@alu.ufc.br" />
           <Input
-            name="Telefone"
+            labelName="Seu email"
+            placeholder="seuemail@alu.ufc.br"
+            register={register('email')}
+          />
+          <Input
+            register={register('numberPhone')}
+            labelName="Telefone"
             type="number"
             placeholder="+55 (85) 00000-0000"
           />
-          <TextArea name="Mensagem" />
+          <TextArea register={register('message')} name="Mensagem" />
           <div className="flex flex-row items-center justify-center gap-3 mt-3">
             <input type="checkbox" name="" id="" />
             <label className="text-sm" htmlFor="">
