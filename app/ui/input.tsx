@@ -49,7 +49,7 @@ export function Button({ name }: ButtonProps) {
   )
 }
 
-export function RadioButton({ tittle, content, ...rest }: RadioButtomProps) {
+export function RadioButton({ tittle, content }: RadioButtomProps) {
   return (
     <div className="rounded-md border-2 border-primary text-secondary flex items-center space-x-2 p-3 max-w-96 transition duration-500 ease-in-out hover:scale-110 hover:bg-primary hover:text-black">
       <Book className="rounded-full bg-secondary p-1" size={30} color="white" />
