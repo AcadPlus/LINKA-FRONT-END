@@ -10,13 +10,19 @@ import {
   RadioButtonProps,
 } from '../lib/definitions'
 import { twMerge } from 'tailwind-merge'
+import { useFormContext } from 'react-hook-form'
 
 export function Input({
   labelName,
   className,
-  register,
+  name,
   ...rest
 }: InputButtonProps) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext()
+
   return (
     <div className={twMerge('flex flex-col space-y-2 w-full', className)}>
       <label className="text-xs" htmlFor="">
@@ -24,21 +30,24 @@ export function Input({
       </label>
       <input
         {...rest}
-        {...register}
+        {...register(name)}
         className="border-2 rounded-md text-black p-2 h-10 text-xs"
       />
+      {errors && <>{errors.root?.message}</>}
     </div>
   )
 }
 
-export function TextArea({ name, register, ...rest }: TextAreaProps) {
+export function TextArea({ name, ...rest }: TextAreaProps) {
+  const { register } = useFormContext()
+
   return (
     <div className="flex flex-col space-y-2 w-full ">
       <label className="text-sm" htmlFor="">
         {name}
       </label>
       <textarea
-        {...register}
+        {...register(name)}
         className="border-2 rounded-md text-black p-2 h-16 text-xs"
         {...rest}
       ></textarea>
